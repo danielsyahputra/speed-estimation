@@ -1,0 +1,16 @@
+services:
+  app:
+    image: speed-estimation-demo
+    container_name: speed-estimation-demo
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    tty: true
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - DISPLAY=host.docker.internal:0
+    volumes:
+      - /tmp/.X11-unix/:/tmp/.X11-unix/:rw
+      - .:/app
