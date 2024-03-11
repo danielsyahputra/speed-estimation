@@ -1,0 +1,24 @@
+# Logging configuration for the default logger
+
+level: INFO # Log level
+
+# Custom log levels
+custom_level:
+  REDIS:
+    level: 21
+    color: green
+  MONGO:
+    level: 22
+    color: green
+  SQL:
+    level: 23
+    color: green
+  ENGINE:
+    level: 24
+    color: blue
+  API:
+    level: 25
+    color: blue
+  SFTP:
+    level: 26
+    color: purple

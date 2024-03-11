@@ -1,0 +1,16 @@
+# Default configurations
+defaults:
+  - _self_
+  - logger: [default]
+  - inference: [main]
+  - override hydra/hydra_logging: none
+  - override hydra/job_logging: none
+
+# Override hydra output directory
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+
+# service mode
+mode: video 

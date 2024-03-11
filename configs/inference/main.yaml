@@ -1,0 +1,12 @@
+engine:
+  onnx_path: weights/onnx/yolov8n/model.onnx
+  classes_path: weights/onnx/yolov8n/metadata.yaml
+  score_threshold: 0.1
+  conf_threshold: 0.4
+  iou_threshold: 0.4
+
+source: tmp/ambulance_2.mp4
+save_path: output
+mode: video
+show: true
+device: cpu
