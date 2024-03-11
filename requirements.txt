@@ -2,7 +2,7 @@ hydra-core
 PyYAML
 python-dotenv
 pyrootutils
-opencv-python-headless
+opencv-python
 numpy
 openvino-dev[onnx]
 matplotlib
