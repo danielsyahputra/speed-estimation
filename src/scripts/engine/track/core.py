@@ -15,11 +15,13 @@ ROOT = pyrootutils.setup_root(
     dotenv=True,
 )
 
-from src.scripts.engine.track.tracker import CentroidTracker
+from src.scripts.engine.track.tracker import Tracker as CentroidTracker
 
 class Tracker(CentroidTracker):
-    def __init__(self, max_lost=2):
+    def __init__(self, max_lost=2, classes: Dict = None):
         super().__init__(max_lost=max_lost, tracker_output_format='visdrone_challenge')
+
+        self.classes = classes
 
     def xyxy2xywh(self, xyxy: np.ndarray) -> np.ndarray:
         """
@@ -61,7 +63,7 @@ class Tracker(CentroidTracker):
         y = int(y + int(h/2))
         return np.array([x,y])
 
-    def update(self, detections: List, classes: Dict = None) -> List:
+    def update(self, detections: List) -> List:
         tracks_list = []
         track_dict = {}
         if len(detections) == 0:
@@ -76,7 +78,7 @@ class Tracker(CentroidTracker):
             centroid = self.centroid_xywh(bbox_xywh)
             track_dict = {"frame": frame, "id": track_id, "bbox_xywh": bbox_xywh, "bbox_xyxy": bbox_xyxy, "centroid_box":centroid,
                           "y":y, "z":z, "class_id": class_id, "confidence": conf}
-            if classes is not None:
-                track_dict["class_name"] = classes[class_id]
+            if self.classes is not None:
+                track_dict["class_name"] = self.classes[class_id]
             tracks_list.append(track_dict)
         return tracks_list

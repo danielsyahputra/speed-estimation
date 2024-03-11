@@ -13,4 +13,5 @@ ipyfilechooser
 onnx
 onnxruntime
 requests
+Pyarrow
 pandas
