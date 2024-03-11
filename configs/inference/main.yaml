@@ -5,8 +5,8 @@ engine:
   conf_threshold: 0.4
   iou_threshold: 0.4
 
-source: tmp/ambulance_2.mp4
+source: tmp/ambulance.jpeg
 save_path: output
-mode: video
+mode: image
 show: true
 device: cpu

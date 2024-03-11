@@ -11,6 +11,3 @@ hydra:
   run:
     dir: .
   output_subdir: null
-
-# service mode
-mode: video 

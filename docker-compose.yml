@@ -1,12 +1,12 @@
 services:
   app:
-    image: speed-estimation-demo
-    container_name: speed-estimation-demo
+    image: kecilin-demo
+    container_name: kecilin-demo
     build:
       context: .
       dockerfile: ./Dockerfile
     tty: true
-    restart: unless-stopped
+    restart: no
     env_file:
       - .env
     environment:
@@ -14,3 +14,4 @@ services:
     volumes:
       - /tmp/.X11-unix/:/tmp/.X11-unix/:rw
       - .:/app
+    command: python src/inference.py

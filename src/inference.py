@@ -90,9 +90,8 @@ if __name__=="__main__":
         """Main function."""
         if cfg.inference.mode == "video":
             inference_on_video(cfg)
-        elif cfg.inference.mode == "video":
+        elif cfg.inference.mode == "image":
             inference_on_image(cfg)   
         else:
             raise ValueError("You can't process the result because you have not define the source type (video or image) in the argument")
-            
     main()
