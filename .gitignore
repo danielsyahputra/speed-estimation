@@ -6,3 +6,5 @@ weights/*.yaml
 assets/*.mp4
 assets/*.jpeg
 assets/*.jpg
+output/*.jpeg
+output/*.avi
