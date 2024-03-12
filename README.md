@@ -112,4 +112,5 @@ If you want to run the engine again, modify the config and then run
 docker-compose up
 ```
 
-![Running via Docker](https://github.com/danielsyahputra/yolov8-onnx/blob/master/assets/docker.png)
+![Running Inference on Image via Docker](https://github.com/danielsyahputra/yolov8-onnx/blob/master/assets/docker.png)
+![Running Inference on Video via Docker](https://github.com/danielsyahputra/yolov8-onnx/blob/master/assets/docker_video.png)
